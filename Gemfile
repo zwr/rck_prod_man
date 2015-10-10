@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-# Use sqlite3 as the database for Active Record
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -25,14 +23,13 @@ gem 'paperclip'
 gem 'html2haml'
 gem 'mongoid'
 
-gem 'factory_girl_rails', '~> 4.0'
 gem 'devise'
-gem 'rspec'
-gem 'rubocop', require: false
 
 group :development, :test do
+  gem 'rspec-rails'
   gem 'pry-rails'
+  gem 'factory_girl_rails', '~> 4.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'rubocop'
 end
-

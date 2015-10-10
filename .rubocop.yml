@@ -1,6 +1,21 @@
+# To fix the 'Prefer single quoted...'
+#   Search for   "([^{"']*)"
+#   Replace with '$1'
+#
+# To fix Ruby 1.9 hash syntax
+#   Search for      {:(\w+) =>
+#   Replace with    { $1:
+#   Search for      :(\w+) =>
+#   Replace with    $1:
 AllCops:
   Exclude:
-    - 'vendor/**/*'
+    - 'db/schema.rb'
+    - 'lib/payment_providers/every_day/every_day.rb'
+    - 'bin/setup'
+    - 'bin/spring'
+    - 'bin/rails'
+    - 'bin/rake'
+    - 'bin/rspec'
 
 Documentation:
   Enabled: false
@@ -9,7 +24,7 @@ Metrics/PerceivedComplexity:
   Enabled: false
 
 Metrics/LineLength:
-  Max: 140
+  Max: 119
 
 Metrics/AbcSize:
   Enabled: false
@@ -23,7 +38,7 @@ Metrics/MethodLength:
 Style/ClassAndModuleChildren:
   Enabled: false
 
-ClassLength:
+Style/NestedTernaryOperator:
   Enabled: false
 
 Style/RegexpLiteral:
@@ -39,4 +54,28 @@ Lint/AmbiguousRegexpLiteral:
   Description: >-
                  Checks for ambiguous regexp literals in the first argument of
                  a method invocation without parenthesis.
+  Enabled: false
+
+Lint/EndAlignment:
+  Enabled: false
+
+ClassLength:
+  Max: 300
+
+ModuleLength:
+  Max: 300
+
+Style/EachWithObject:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+SingleSpaceBeforeFirstArg:
+  Enabled: false
+
+BlockDelimiters:
+  Enabled: false
+
+SpaceInsideStringInterpolation:
   Enabled: false
